@@ -1,7 +1,7 @@
 <?php
     include 'vendor/autoload.php';
 
-    $handler = new Handlers\V5();
+    $handler = new Handlers\Sess5Composed();
     session_set_save_handler($handler);
     session_start();
 

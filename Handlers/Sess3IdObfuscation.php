@@ -4,7 +4,7 @@ namespace Handlers;
 
 use SessionHandler;
 
-class V3 extends SessionHandler {
+class Sess3IdObfuscation extends SessionHandler {
     private function hashId($id)
     {
         return hash('sha256', $id);

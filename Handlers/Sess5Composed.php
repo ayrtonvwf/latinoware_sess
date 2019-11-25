@@ -3,8 +3,23 @@
 namespace Handlers;
 
 use SessionHandler;
+use SessionHandlerInterface;
 
-class Sess4ContentEncription extends SessionHandler {
+class Sess5Composed implements SessionHandlerInterface {
+    /**
+     * @var SessionHandlerInterface
+     */
+    private $sessionHandler;
+
+    public function __construct($sessionHandler = null)
+    {
+        if (!$sessionHandler) {
+            $sessionHandler = new SessionHandler();
+        }
+
+        $this->sessionHandler = $sessionHandler;
+    }
+
     private function hashId($id)
     {
         return hash('sha256', $id);
@@ -32,14 +47,14 @@ class Sess4ContentEncription extends SessionHandler {
         ];
         $content = json_encode($content, JSON_PRETTY_PRINT);
 
-        return parent::write($hash, $content);
+        return $this->sessionHandler->write($hash, $content);
     }
 
     public function read($id)
     {
         $hash = $this->hashId($id);
 
-        $content = parent::read($hash);
+        $content = $this->sessionHandler->read($hash);
         $content = json_decode($content, true);
 
         if (empty($content['data'])) {
@@ -56,6 +71,23 @@ class Sess4ContentEncription extends SessionHandler {
     {
         $hash = $this->hashId($id);
         
-        return parent::destroy($hash);
+        return $this->sessionHandler->destroy($hash);
+    }
+
+    public function open($savePath, $id)
+    {
+        $hash = $this->hashId($id);
+
+        return $this->sessionHandler->open($savePath, $id);
+    }
+
+    public function close()
+    {
+        return $this->sessionHandler->close();
+    }
+
+    public function gc($maxLifetime)
+    {
+        return $this->sessionHandler->gc($maxLifetime);
     }
 }

@@ -1,7 +1,9 @@
 <?php
     include 'vendor/autoload.php';
 
-    $handler = new Handlers\Sess2ContentManipulation();
+    $appKey = 'root123';
+
+    $handler = new Handlers\Sess6AppKey($appKey);
     session_set_save_handler($handler);
     session_start();
 

@@ -1,7 +1,7 @@
 <?php
     include 'vendor/autoload.php';
 
-    $handler = new Handlers\V3();
+    $handler = new Handlers\Sess3IdObfuscation();
     session_set_save_handler($handler);
     session_start();
 

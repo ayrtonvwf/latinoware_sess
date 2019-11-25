@@ -4,7 +4,7 @@ namespace Handlers;
 
 use SessionHandler;
 
-class V2 extends SessionHandler {
+class Sess2ContentManipulation extends SessionHandler {
     private const PREFIX = 'my-';
 
     public function write($id, $data)

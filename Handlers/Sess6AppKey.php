@@ -5,29 +5,35 @@ namespace Handlers;
 use SessionHandler;
 use SessionHandlerInterface;
 
-class V5 implements SessionHandlerInterface {
+class Sess6AppKey implements SessionHandlerInterface {
     /**
      * @var SessionHandlerInterface
      */
     private $sessionHandler;
 
-    public function __construct($sessionHandler = null)
+    /**
+     * @var string
+     */
+    private $appKey;
+
+    public function __construct($appKey, $sessionHandler = null)
     {
         if (!$sessionHandler) {
             $sessionHandler = new SessionHandler();
         }
 
+        $this->appKey = $appKey;
         $this->sessionHandler = $sessionHandler;
     }
 
     private function hashId($id)
     {
-        return hash('sha256', $id);
+        return hash('sha256', $id . $this->appKey);
     }
 
     private function generateKey($id)
     {
-        $binaryKey = sodium_crypto_generichash($id);
+        $binaryKey = sodium_crypto_generichash($id . $this->appKey);
         $hexaKey = sodium_bin2hex($binaryKey);
         return substr($hexaKey, 0, SODIUM_CRYPTO_SECRETBOX_KEYBYTES);
     }

@@ -1,7 +1,7 @@
 <?php
     include 'vendor/autoload.php';
 
-    $handler = new Handlers\V1();
+    $handler = new Handlers\Sess1IdManipulation();
     session_set_save_handler($handler);
     session_start();
 

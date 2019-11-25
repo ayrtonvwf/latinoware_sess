@@ -1,7 +1,7 @@
 <?php
     include 'vendor/autoload.php';
 
-    $handler = new Handlers\V4();
+    $handler = new Handlers\Sess4ContentEncription();
     session_set_save_handler($handler);
     session_start();
 
