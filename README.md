@@ -34,7 +34,7 @@ I know, I shouldn't upload the `./vendor` folder to the source control. But I di
 
 I know, the code could be a lot nicer. It could make use of many freshly baked PHP features, but for the sake of the friendship with those who are just getting started with coding: lets oversimplify the code as much as possible.
 
-I know, the naming is bad. It's purpose is only to keep files in order to the presentation.
+I know, the naming is bad. It's purpose is only to keep the files sorted to the presentation.
 
 # Presentation
 
