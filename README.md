@@ -31,3 +31,7 @@ I know, I shouldn't upload the `./vendor` folder to the source control. But I di
 I know, the code could be a lot nicer. It could make use of many freshly baked PHP features, but for the sake of the friendship with those who are just getting started with coding: lets oversimplify the code as much as possible.
 
 I know, the naming is bad. It's purpose is only to keep files in order to the presentation.
+
+# Presentation
+
+[Google Docs Presentation](https://docs.google.com/presentation/d/1Q_lySDyju87ELyMcYnxmewtWmPlCKBiaoTAg-oOTUzI/edit?usp=sharing)
