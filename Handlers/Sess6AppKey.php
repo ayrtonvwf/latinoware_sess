@@ -22,7 +22,7 @@ class Sess6AppKey implements SessionHandlerInterface {
             $sessionHandler = new SessionHandler();
         }
 
-        $this->appKey = $appKey;
+        $this->appKey = sodium_bin2hex($appKey);
         $this->sessionHandler = $sessionHandler;
     }
 
