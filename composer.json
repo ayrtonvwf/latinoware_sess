@@ -1,0 +1,23 @@
+{
+    "name": "ayrtonvwf/latinoware_sess",
+    "authors": [
+        {
+            "name": "Ayrton Fidelis",
+            "email": "ayrton.vargas33@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-sodium": "*"
+    },
+    "scripts": {
+        "serve": "php -S localhost:8000 -d session.save_path='./session' -d xdebug.remote_enable=1 -d xdebug.remote_autostart=1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Handlers\\": "Handlers\\"
+        }
+    },
+    "config": {
+        "process-timeout": 0
+    }
+}
