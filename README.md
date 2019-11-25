@@ -7,10 +7,14 @@ Ok, it uses PHP (only ever tested on 7.3, three days before this talk. Might wor
 Clone this repo to your local machine.
 
 If you have composer set up, run:
-```composer serve```
+```
+composer serve
+```
 
 Otherwise:
-```php -S localhost:8000 -d session.save_path='./session' -d xdebug.remote_enable=1 -d xdebug.remote_autostart=1```
+```
+php -S localhost:8000 -d session.save_path='./session' -d xdebug.remote_enable=1 -d xdebug.remote_autostart=1
+```
 
 This will start the PHP built-in server, with the right session path and with debugging enabled (just in case).
 
